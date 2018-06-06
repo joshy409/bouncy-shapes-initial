@@ -33,6 +33,7 @@ inline void HR(HRESULT hr)
 #include "Scene.h"
 #include "CircleRenderer.h"
 #include "Engine.h"
+#include "SquareRenderer.h"
 
 template <typename T>
 class DesktopWindow : public CWindowImpl<T, CWindow, CWinTraits<WS_OVERLAPPEDWINDOW | WS_VISIBLE>> {
@@ -203,11 +204,21 @@ public:
 		// initialize renderers
 		auto yellowCircleRenderer = make_shared<CircleRenderer>(brushDeviceResource, Color4F{ 1.f, 1.f, 0.f, 1.f }, 50.f);
 		// TODO: add more renderers here
+		auto redCircleRenderer = make_shared<CircleRenderer>(brushDeviceResource, Color4F{ 1.f, 0.f, 0.f, 1.f }, 50.f);
+		auto greenSquareRenderer = make_shared<SquareRenderer>(brushDeviceResource, Color4F{ 0.f, 1.f, 0.f, 1.f }, 50.f);
 
 		// setup scene
-		auto gameObject = make_unique<GameObject>(static_pointer_cast<IRenderer, CircleRenderer>(yellowCircleRenderer), MPoint2F{ 150.f, 150.f });
+		auto gameObject = make_unique<GameObject>(static_pointer_cast<IRenderer, CircleRenderer>(yellowCircleRenderer), MPoint2F{ 150.f, 150.f }, Start2F{ 3.f, 0.f });
 		_scene.insertGameObject(gameObject);
 		// TODO: add more objects to the scene
+
+		//red circle
+		auto gameObject1 = make_unique<GameObject>(static_pointer_cast<IRenderer, CircleRenderer>(redCircleRenderer), MPoint2F{ 150.f, 500.f }, Start2F{ 4.f, 0.f });
+		_scene.insertGameObject(gameObject1);
+
+		//green square
+		auto gameObject2 = make_unique<GameObject>(static_pointer_cast<IRenderer, SquareRenderer>(greenSquareRenderer), MPoint2F{ 150.f, 30.f }, Start2F{ -1.f, 0.f });
+		_scene.insertGameObject(gameObject2);
 	}
 
 	virtual void CreateDeviceResources() override

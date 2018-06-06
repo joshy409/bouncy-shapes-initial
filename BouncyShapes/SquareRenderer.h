@@ -14,4 +14,5 @@ private:
 	std::shared_ptr<BrushDeviceResource> _brushPtr;
 	Color4F _color;
 	float _side;
+
 };

@@ -11,3 +11,8 @@ struct Color4F {
 	float b;
 	float a;
 };
+
+struct Start2F {
+	float x;
+	float y;
+};

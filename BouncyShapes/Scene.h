@@ -13,6 +13,7 @@ public:
 
 	void Draw(ID2D1HwndRenderTarget& target);
 
+
 private:
 	std::vector<std::unique_ptr<GameObject>> _gameObjects = {};
 };
