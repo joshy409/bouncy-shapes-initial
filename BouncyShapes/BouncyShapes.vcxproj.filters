@@ -22,6 +22,7 @@
     <ClCompile Include="SquareRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EllipseRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BrushDeviceResource.h">
@@ -51,6 +52,7 @@
     <ClInclude Include="SquareRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EllipseRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
