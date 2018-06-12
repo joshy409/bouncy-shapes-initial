@@ -10,10 +10,9 @@ public:
 
 	const IRenderer& getRenderer();
 	const MPoint2F& getLocation();
-	const Start2F& getStart();
-
 	
 	//added
+	const Start2F& getStart();
 	void setLocation(MPoint2F);
 	void setStartX(float);
 	void setStartY(float);
@@ -24,6 +23,8 @@ public:
 private:
 	std::shared_ptr<IRenderer> _rendererPtr;
 	MPoint2F _location;
+
+	// this is a struct with 2 floats x,y. x,y determines their start direction and speed
 	Start2F _start;
 	
 };

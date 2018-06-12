@@ -12,6 +12,7 @@ struct Color4F {
 	float a;
 };
 
+// added
 struct Start2F {
 	float x;
 	float y;
